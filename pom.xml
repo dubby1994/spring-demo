@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>restful-web</module>
+        <module>access-mysql-data</module>
     </modules>
 
     <parent>
