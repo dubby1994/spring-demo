@@ -11,6 +11,8 @@
     <modules>
         <module>restful-web</module>
         <module>access-mysql-data</module>
+        <module>accessing-data-jpa</module>
+        <module>uploading-files</module>
     </modules>
 
     <parent>
