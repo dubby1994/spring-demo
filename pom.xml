@@ -13,6 +13,7 @@
         <module>access-mysql-data</module>
         <module>accessing-data-jpa</module>
         <module>uploading-files</module>
+        <module>scheduling-tasks</module>
     </modules>
 
     <parent>
