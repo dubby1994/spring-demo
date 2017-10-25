@@ -15,3 +15,7 @@
 ## scheduling-tasks
 
 一个简单的定时任务的项目
+
+## accessing-mysql-mybatis
+
+使用MyBatis来操作MySQL
