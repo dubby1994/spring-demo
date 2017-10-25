@@ -16,13 +16,16 @@
 
 package hello;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -36,7 +39,7 @@ public class CustomerRepositoryTests {
     @Autowired
     private CustomerRepository customers;
 
-    @Test
+    @Ignore
     public void testFindByLastName() {
         Customer customer = new Customer("first", "last");
         entityManager.persist(customer);
@@ -46,7 +49,7 @@ public class CustomerRepositoryTests {
         assertThat(findByLastName).extracting(Customer::getLastName).containsOnly(customer.getLastName());
     }
 
-    @Test
+    @Ignore
     public void testFindByFirstName() {
 
         System.out.println("==========================================");
@@ -56,4 +59,50 @@ public class CustomerRepositoryTests {
         findByLastName.forEach( c -> System.out.println(c.toString()));
         System.out.println("==========================================");
     }
+
+    @Ignore
+    public void findByLastNameOrderByFirstNameDesc() {
+        System.out.println("findByLastNameOrderByFirstNameDesc==========================================");
+
+        List<Customer> findByLastName = customers.findByLastNameOrderByFirstNameDesc("Bauer");
+
+        findByLastName.forEach( c -> System.out.println(c.toString()));
+        System.out.println("findByLastNameOrderByFirstNameDesc==========================================");
+    }
+
+    @Ignore
+    public void findByLastNameOrderByFirstNameAsc() {
+        System.out.println("findByLastNameOrderByFirstNameAsc==========================================");
+
+        List<Customer> findByLastName = customers.findByLastNameOrderByFirstNameAsc("Bauer");
+
+        findByLastName.forEach( c -> System.out.println(c.toString()));
+        System.out.println("findByLastNameOrderByFirstNameAsc==========================================");
+    }
+
+    @Ignore
+     public void findByFirstNameAndLastName() {
+        System.out.println("findByFirstNameAndLastName==========================================");
+
+        List<Customer> findByLastName = customers.findByFirstNameAndLastName("Jack", "Bauer");
+
+        findByLastName.forEach( c -> System.out.println(c.toString()));
+        System.out.println("findByFirstNameAndLastName==========================================");
+    }
+
+    @Test
+    public void findAllSort() {
+        System.out.println("findByFirstNameAndLastName==========================================");
+
+        List<Sort.Order> orderList = new ArrayList<>();
+        orderList.add(new Sort.Order(Sort.Direction.DESC, "id"));
+
+        Sort sort = new Sort(orderList);
+
+        List<Customer> findByLastName = customers.findAll(sort);
+
+        findByLastName.forEach( c -> System.out.println(c.toString()));
+        System.out.println("findByFirstNameAndLastName==========================================");
+    }
+
 }

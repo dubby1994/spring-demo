@@ -14,6 +14,7 @@
         <module>accessing-data-jpa</module>
         <module>uploading-files</module>
         <module>scheduling-tasks</module>
+        <module>accessing-mysql-mybatis</module>
     </modules>
 
     <parent>
