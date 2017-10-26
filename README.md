@@ -19,3 +19,7 @@
 ## accessing-mysql-mybatis
 
 使用MyBatis来操作MySQL
+
+## accessing-mysql-mybatis-xml
+
+使用MyBatis来操作MySQL（XML版）

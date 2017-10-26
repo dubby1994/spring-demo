@@ -15,6 +15,7 @@
         <module>uploading-files</module>
         <module>scheduling-tasks</module>
         <module>accessing-mysql-mybatis</module>
+        <module>accessing-mysql-mybatis-xml</module>
     </modules>
 
     <parent>

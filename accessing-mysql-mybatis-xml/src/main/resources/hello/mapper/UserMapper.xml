@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hello.mapper.UserMapper">
+
+    <select id="findAll" resultType="User">
+        SELECT * FROM USER
+    </select>
+
+    <select id="findById" parameterType="int" resultType="User">
+        SELECT * FROM USER WHERE ID = #{id}
+    </select>
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO USER(email, name) values(#{email}, #{name})
+    </insert>
+
+</mapper>
