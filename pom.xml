@@ -16,6 +16,8 @@
         <module>scheduling-tasks</module>
         <module>accessing-mysql-mybatis</module>
         <module>accessing-mysql-mybatis-xml</module>
+        <module>classpath-xml</module>
+        <module>hello-service</module>
     </modules>
 
     <parent>
